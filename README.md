@@ -39,14 +39,10 @@ Connect to psql
 psql postgres
 ```
 
-Create the database
+Create the databases (dev env and test env)
 ```
 CREATE DATABASE bookmark_manager;
+CREATE DATABASE bookmark_manager_test;
 ```
 
-Connect to the database 
-```
-\c bookmark_manager;
-```
-
-Run the queries from `db/migrations` folder in given order
+Connect to the database and run the queries from `db/migrations` folder in given order (in both the `bookmark_manager` and `bookmark_manager_test`)
