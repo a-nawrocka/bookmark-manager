@@ -5,15 +5,15 @@ feature 'Viewing bookmarks' do
   end
 
   scenario 'visiting the bookmarks page' do 
-    Bookmark.create(url: 'http://www.makersacademy.com')
-    Bookmark.create(url: 'http://www.destroyallsoftware.com')
-    Bookmark.create(url: 'http://www.google.com')
+    Bookmark.create(url: "http://www.makersacademy.com", title: "makers")
+    Bookmark.create(url: "http://www.destroyallsoftware.com", title: "destroy")
+    Bookmark.create(url: "http://www.google.com", title: "google")
 
     visit '/bookmarks'
     
-    expect(page).to have_content "http://www.makersacademy.com"
-    expect(page).to have_content "http://www.destroyallsoftware.com"
-    expect(page).to have_content "http://www.google.com"
+    expect(page).to have_link("makers", href: "http://www.makersacademy.com")
+    expect(page).to have_link("destroy", href: "http://www.destroyallsoftware.com")
+    expect(page).to have_link("google", href: "http://www.google.com")
   end
 end 
 
